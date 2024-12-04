@@ -20,4 +20,4 @@ async def generate_terms_response(request: Request):
     return Response(bytes)
 
 
-app = Starlette(debug=True, routes=[Route("/", generate_terms_response)])
+app = Starlette(debug=True, routes=[Route("/terms", generate_terms_response)])
