@@ -1,8 +1,5 @@
 GHPAGE_REPO_SSHLINK="git@github.com:basvandriel/legal-pdf-microservice-gh-pages.git"
 
-
-# TODO build the terms file in ghpage
-
 # Save the git repo path
 GIT_REPO_DIRECTORY=$(dirname "$0")
 
@@ -11,6 +8,9 @@ SCRIPT=$(readlink -f "$0")
 
 # Get the path to the repository
 GIT_REPO_PATH="$(dirname "$SCRIPT")/data/ghpages"
+
+# Upload the English terms
+python -m app.cli data/TERMS_EN.md $GIT_REPO_PATH/terms.pdf
 
 # Remove the old repository
 rm -fr $GIT_REPO_PATH/.git
