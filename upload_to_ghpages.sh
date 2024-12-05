@@ -15,6 +15,9 @@ mkdir $TEMP_REPO_PATH
 # Upload the English terms
 python -m src.cli docs/TERMS_EN.md $TEMP_REPO_PATH/terms.pdf
 
+# Copy the CNAME file to the directory
+cp "$SCRIPT_PATH/src/CNAME" $TEMP_REPO_PATH
+
 # Initialize the temporary repository
 git init $TEMP_REPO_PATH
 
