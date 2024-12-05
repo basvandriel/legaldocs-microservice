@@ -1,6 +1,6 @@
 import pathlib
 
-from app.md_to_pdf_bytes_converter import MarkdownToPDFBytesConverter
+from .md_to_pdf_bytes_converter import MarkdownToPDFBytesConverter
 
 
 class MarkdownToPDFClICommandHandler:

@@ -1,7 +1,7 @@
 import pathlib
 import click
 
-from app.md_to_pdf_cli_command_handler import MarkdownToPDFClICommandHandler
+from .md_to_pdf_cli_command_handler import MarkdownToPDFClICommandHandler
 
 
 @click.command
