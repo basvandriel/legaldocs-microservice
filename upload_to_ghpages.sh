@@ -12,9 +12,6 @@ TEMP_REPO_PATH="$(dirname "$SCRIPT")/data/tmp/legal-pdf-microservice-gh-pages"
 mkdir "$(dirname "$SCRIPT")/data/tmp/"
 mkdir $TEMP_REPO_PATH
 
-# Copy all the ghpages content
-cp -fr "$SCRIPT_PATH/data/ghpages/" "$TEMP_REPO_PATH"
-
 # Upload the English terms
 python -m app.cli data/TERMS_EN.md $TEMP_REPO_PATH/terms.pdf
 
@@ -24,12 +21,18 @@ git init $TEMP_REPO_PATH
 # # Add the remote
 git -C $TEMP_REPO_PATH remote add origin $GHPAGE_REPO_SSHLINK
 
+TARGET_BRANCH="main"
+
+git -C "$TEMP_REPO_PATH" checkout -B "$TARGET_BRANCH"
+
 # # Stage all the files and commit
 git -C $TEMP_REPO_PATH add .
 git -C $TEMP_REPO_PATH commit -m "Update legal terms"
 
 # # Force push, ensuring we only have one commit
-git -C $TEMP_REPO_PATH push --set-upstream origin main --force
+git -C $TEMP_REPO_PATH push --set-upstream origin "$TARGET_BRANCH" --force
+
+echo "Succesfully pushed code to repository"
 
 # Clean up
 rm -fr $TEMP_REPO_PATH
