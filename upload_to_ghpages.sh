@@ -7,9 +7,9 @@ GIT_REPO_DIRECTORY=$(dirname "$0")
 SCRIPT=$(readlink -f "$0")
 SCRIPT_PATH=$(dirname "$SCRIPT")
 
-TEMP_REPO_PATH="$(dirname "$SCRIPT")/data/tmp/legal-pdf-microservice-gh-pages"
+TEMP_REPO_PATH="$(dirname "$SCRIPT")/tmp/legal-pdf-microservice-gh-pages"
 
-mkdir "$(dirname "$SCRIPT")/data/tmp/"
+mkdir "$(dirname "$SCRIPT")/tmp/"
 mkdir $TEMP_REPO_PATH
 
 # Upload the English terms
