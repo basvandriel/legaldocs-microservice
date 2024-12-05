@@ -12,9 +12,6 @@ TEMP_REPO_PATH="$(dirname "$SCRIPT")/data/tmp/legal-pdf-microservice-gh-pages"
 mkdir "$(dirname "$SCRIPT")/data/tmp/"
 mkdir $TEMP_REPO_PATH
 
-# Copy all the ghpages content
-# cp -fr "$SCRIPT_PATH/data/ghpages/" "$TEMP_REPO_PATH"
-
 # Upload the English terms
 python -m app.cli data/TERMS_EN.md $TEMP_REPO_PATH/terms.pdf
 
