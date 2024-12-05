@@ -1,8 +1,5 @@
 GHPAGE_REPO_SSHLINK="git@github.com:basvandriel/legal-pdf-microservice-gh-pages.git"
 
-
-# GHPAGE_REPO_SSHLINK="https://x-access-token:$GITHUB_TOKEN@github.com/basvandriel/legal-pdf-microservice-gh-pages"
-
 # Save the git repo path
 GIT_REPO_DIRECTORY=$(dirname "$0")
 
@@ -37,6 +34,8 @@ git -C $TEMP_REPO_PATH commit -m "Update legal terms"
 
 # # Force push, ensuring we only have one commit
 git -C $TEMP_REPO_PATH push --set-upstream origin "$TARGET_BRANCH" --force
+
+echo "Succesfully pushed code to repository"
 
 # Clean up
 rm -fr $TEMP_REPO_PATH
