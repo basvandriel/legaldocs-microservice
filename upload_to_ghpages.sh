@@ -24,12 +24,16 @@ git init $TEMP_REPO_PATH
 # # Add the remote
 git -C $TEMP_REPO_PATH remote add origin $GHPAGE_REPO_SSHLINK
 
+TARGET_BRANCH="main"
+
+git -C "$TEMP_REPO_PATH" checkout -B "$TARGET_BRANCH"
+
 # # Stage all the files and commit
 git -C $TEMP_REPO_PATH add .
 git -C $TEMP_REPO_PATH commit -m "Update legal terms"
 
 # # Force push, ensuring we only have one commit
-git -C $TEMP_REPO_PATH push --set-upstream origin main --force
+git -C $TEMP_REPO_PATH push --set-upstream origin "$TARGET_BRANCH" --force
 
 # Clean up
 rm -fr $TEMP_REPO_PATH
