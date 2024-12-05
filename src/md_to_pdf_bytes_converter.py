@@ -4,7 +4,7 @@ import pathlib
 import markdown
 from weasyprint import CSS, HTML
 
-from app.paths import STYLE_PATH
+from .paths import STYLE_PATH
 import io
 
 

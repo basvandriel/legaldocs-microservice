@@ -13,7 +13,7 @@ mkdir "$(dirname "$SCRIPT")/data/tmp/"
 mkdir $TEMP_REPO_PATH
 
 # Upload the English terms
-python -m app.cli data/TERMS_EN.md $TEMP_REPO_PATH/terms.pdf
+python -m src.cli data/TERMS_EN.md $TEMP_REPO_PATH/terms.pdf
 
 # Initialize the temporary repository
 git init $TEMP_REPO_PATH
