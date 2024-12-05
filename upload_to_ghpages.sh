@@ -1,7 +1,7 @@
 # GHPAGE_REPO_SSHLINK="git@github.com:basvandriel/legal-pdf-microservice-gh-pages.git"
 
 
-GHPAGE_REPO_SSHLINK="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/basvandriel/legal-pdf-microservice-gh-pages"
+GHPAGE_REPO_SSHLINK="https://x-access-token:$GITHUB_TOKEN@github.com/basvandriel/legal-pdf-microservice-gh-pages"
 
 # Save the git repo path
 GIT_REPO_DIRECTORY=$(dirname "$0")
