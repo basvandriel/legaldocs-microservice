@@ -1,9 +1,9 @@
-name: Deploy general terms
+name: Deploy to Github Pages
 
 on: [push]
 
 jobs:
-  build:
+  deploy:
     permissions:
       contents: write
 
@@ -21,7 +21,6 @@ jobs:
 
       - name: Install requirements
         run: pip install -r requirements.txt
-
 
       - name: Configure SSH for Deploy Key
         run: |
