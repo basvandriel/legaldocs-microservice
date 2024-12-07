@@ -41,7 +41,6 @@ jobs:
         with:
           path: tmp/site
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -52,25 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      # TODO build to folder
-
-      
-
-
-
-      # - name: Configure SSH for Deploy Key
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     echo "${{ secrets.DEPLOY_KEY_SECRET }}" > ~/.ssh/id_rsa
-      #     chmod 600 ~/.ssh/id_rsa
-      #     ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-      # - name: Deploy documentation
-      #   env:
-      #     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_SECRET }}
-      #   run: |
-      #     git config --global init.defaultBranch 'main'
-      #     git config --global user.email 'contact@basvandriel.nl'
-      #     git config --global user.name "basbot" 
-      #     ./upload_to_ghpages.sh
