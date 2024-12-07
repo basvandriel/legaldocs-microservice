@@ -36,16 +36,14 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-
-      # This needs a _site directory
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: tmp/site
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          path: tmp/site
 
 
       # TODO build to folder
